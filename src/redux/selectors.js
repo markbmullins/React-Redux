@@ -28,7 +28,10 @@ export const filteredPlayersSelector = createSelector(
                         .toString()
                         .includes(searchText.toString());
                 default:
-                    return player[searchType].includes(searchText);
+                    // Case insensitive search
+                    return player[searchType]
+                        .toUpperCase()
+                        .includes(searchText.toUpperCase());
             }
         });
     }

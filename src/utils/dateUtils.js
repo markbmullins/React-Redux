@@ -2,8 +2,10 @@ import { format, compareAsc } from 'date-fns';
 
 // Splits date in YYYY-MM-DD format into array and creates Date object
 const createDate = date => {
-    const splitDate = date.split('-');
-    return new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
+    const tz = 'GMT-7:00';
+    return new Date(date + tz);
+    // const splitDate = date.split('-');
+    // return new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
 };
 export const formatDate = date => {
     if (date) {
