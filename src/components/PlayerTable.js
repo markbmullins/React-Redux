@@ -46,7 +46,7 @@ const PlayerTable = ({ players, format }) => {
 };
 
 PlayerTable.propTypes = {
-    players: PropTypes.arrayOf(player).isRequired,
+    players: PropTypes.arrayOf(player),
     format: PropTypes.func.isRequired
 };
 

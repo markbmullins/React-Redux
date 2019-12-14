@@ -1,14 +1,9 @@
 import { createSelector } from 'reselect';
 import { compareDates } from '../utils/dateUtils';
-import { format } from 'date-fns';
 
 export const playerSelector = state => state.players;
 export const searchTextSelector = state => state.search.searchText;
 export const searchTypeSelector = state => state.search.searchType;
-
-export const birthdaySelector = createSelector(playerSelector, players =>
-    players.map(player => format(player.dateOfBirth, 'MMMM do, y'))
-);
 
 export const filteredPlayersSelector = createSelector(
     playerSelector,

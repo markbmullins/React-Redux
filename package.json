@@ -48,6 +48,7 @@
         "enzyme-adapter-react-16": "^1.15.1",
         "istanbul": "^0.4.5",
         "jest": "^24.9.0",
-        "jest-enzyme": "^7.1.2"
+        "jest-enzyme": "^7.1.2",
+        "jest-fetch-mock": "^2.1.2"
     }
 }
