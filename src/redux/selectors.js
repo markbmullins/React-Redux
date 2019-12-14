@@ -18,7 +18,7 @@ export const filteredPlayersSelector = createSelector(
                 case 'dateOfBirth': {
                     return compareDates(searchText, player[searchType]);
                 }
-                case 'jersey':
+                case 'jerseyNumber':
                     return player[searchType]
                         .toString()
                         .includes(searchText.toString());
