@@ -4,30 +4,39 @@ import PropTypes from 'prop-types';
 import { player } from '../propTypes';
 
 const PlayerTable = ({ players, format }) => {
-    if (!players || !Array.isArray(players)) return <div>loading...</div>;
+    if (!players || !Array.isArray(players))
+        return <div data-test="loading">loading...</div>;
 
     return (
-        <Table>
-            <thead>
+        <Table data-test="player-table">
+            <thead data-test="table-header">
                 <tr>
-                    <th>Player</th>
-                    <th>Position</th>
-                    <th>Nationality</th>
-                    <th>Jersey Number</th>
-                    <th>Contract Until</th>
-                    <th>Date of Birth</th>
+                    <th data-test="header-item">Player</th>
+                    <th data-test="header-item">Position</th>
+                    <th data-test="header-item">Nationality</th>
+                    <th data-test="header-item">Jersey Number</th>
+                    <th data-test="header-item">Contract Until</th>
+                    <th data-test="header-item">Date of Birth</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody data-test="table-body">
                 {players.map((player, index) => {
                     return (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                            <td>{player.nationality}</td>
-                            <td>{player.jerseyNumber}</td>
-                            <td>{format(player.contractUntil)}</td>
-                            <td>{format(player.dateOfBirth)}</td>
+                        <tr data-test="table-row" key={index}>
+                            <td data-test="name">{player.name}</td>
+                            <td data-test="position">{player.position}</td>
+                            <td data-test="nationality">
+                                {player.nationality}
+                            </td>
+                            <td data-test="jerseyNumber">
+                                {player.jerseyNumber}
+                            </td>
+                            <td data-test="contractUntil">
+                                {format(player.contractUntil)}
+                            </td>
+                            <td data-test="dateOfBirth">
+                                {format(player.dateOfBirth)}
+                            </td>
                         </tr>
                     );
                 })}
