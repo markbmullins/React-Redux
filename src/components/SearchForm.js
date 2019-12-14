@@ -1,12 +1,26 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
+const positionOptions = [
+    'Attacking Midfield',
+    'Central Midfield',
+    'Centre-Back',
+    'Centre-Forward',
+    'Centre-Forward',
+    'Defensive Midfield',
+    'Keeper',
+    'Left Midfield',
+    'Left Wing',
+    'Left-Back',
+    'Right-Back'
+];
+
 const SearchForm = ({ handleSearch }) => {
     return (
         <div className="form">
             <Form>
                 <Form.Row>
-                    <Form.Group controlId="playerName">
+                    <Form.Group controlId="player-name">
                         <Form.Label>Player Name</Form.Label>
                         <Form.Control
                             type="input"
@@ -14,13 +28,16 @@ const SearchForm = ({ handleSearch }) => {
                             onChange={e => handleSearch('name', e)}
                         />
                     </Form.Group>
-                    <Form.Group controlId="playerPosition">
+                    <Form.Group controlId="player-position">
                         <Form.Label>Position</Form.Label>
                         <Form.Control
-                            type="input"
-                            placeholder="Enter Position..."
-                            onChange={e => handleSearch('position', e)}
-                        />
+                            as="select"
+                            onChange={e => handleSearch('position', e)}>
+                            <option></option>
+                            {positionOptions.map(position => (
+                                <option>{position}</option>
+                            ))}
+                        </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="playerNationality">
                         <Form.Label>Nationality</Form.Label>

@@ -8,8 +8,9 @@ import { playerSelector, filteredPlayersSelector } from '../../redux/selectors';
 import { formatDate } from '../../utils/dateUtils';
 import SearchForm from '../SearchForm';
 
-function App(props) {
+const App = props => {
     const { dispatch } = props;
+
     useEffect(() => {
         dispatch(playerActions.loadPlayers());
     }, [dispatch]);
@@ -49,7 +50,7 @@ function App(props) {
                 );
                 break;
             default:
-                return null;
+                return;
         }
     };
 
@@ -71,13 +72,13 @@ function App(props) {
             </div>
         </div>
     );
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     return {
         players: playerSelector(state),
         filtered: filteredPlayersSelector(state)
     };
-}
+};
 
 export default connect(mapStateToProps)(App);
