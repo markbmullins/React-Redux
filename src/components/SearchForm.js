@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import PropTypes from 'prop-types';
 
 const positionOptions = [
     'Attacking Midfield',
@@ -34,8 +35,8 @@ const SearchForm = ({ handleSearch }) => {
                             as="select"
                             onChange={e => handleSearch('position', e)}>
                             <option></option>
-                            {positionOptions.map(position => (
-                                <option>{position}</option>
+                            {positionOptions.map((position, index) => (
+                                <option key={index}>{position}</option>
                             ))}
                         </Form.Control>
                     </Form.Group>
@@ -73,6 +74,10 @@ const SearchForm = ({ handleSearch }) => {
             </Form>
         </div>
     );
+};
+
+SearchForm.propTypes = {
+    handleSearch: PropTypes.func.isRequired
 };
 
 export default SearchForm;

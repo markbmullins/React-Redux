@@ -7,6 +7,8 @@ import PlayerTable from '../PlayerTable';
 import { playerSelector, filteredPlayersSelector } from '../../redux/selectors';
 import { formatDate } from '../../utils/dateUtils';
 import SearchForm from '../SearchForm';
+import PropTypes from 'prop-types';
+import { player } from '../../propTypes';
 
 const App = props => {
     const { dispatch } = props;
@@ -79,6 +81,12 @@ const mapStateToProps = state => {
         players: playerSelector(state),
         filtered: filteredPlayersSelector(state)
     };
+};
+
+App.propTypes = {
+    players: PropTypes.arrayOf(player).isRequired,
+    filtered: PropTypes.arrayOf(player).isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps)(App);

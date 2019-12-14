@@ -40,4 +40,5 @@ PlayerTable.propTypes = {
     players: PropTypes.arrayOf(player).isRequired,
     format: PropTypes.func.isRequired
 };
+
 export default PlayerTable;
