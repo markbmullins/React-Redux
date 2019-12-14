@@ -5,7 +5,8 @@ to manage and memoize derived state. Uses Enzyme and Jest for unit and integrati
 react-bootstrap.
 
 To get a test coverage report, run `yarn test:coverage`
-Current test coverage report:
+
+Current test coverage report:  
 ![Test coverage](./currentTestCoverage.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
