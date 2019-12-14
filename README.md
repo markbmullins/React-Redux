@@ -1,3 +1,13 @@
+# Overview
+
+A React app that fetches data from an API and manages state with Redux. Uses redux-thunk for async requests and reselect
+to manage and memoize derived state. Uses Enzyme and Jest for unit and integration testing. UI is constructed using
+react-bootstrap.
+
+To get a test coverage report, run `yarn test:coverage`
+Current test coverage report:
+![Test coverage](./currentTestCoverage.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +76,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
 # React-Redux
