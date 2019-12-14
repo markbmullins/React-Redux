@@ -1,12 +1,11 @@
 import { format, compareAsc } from 'date-fns';
 
-// Splits date in YYYY-MM-DD format into array and creates Date object
+// creates Date object from date string in YYYY-MM-DD format
 const createDate = date => {
-    const tz = 'GMT-7:00';
+    const tz = 'GMT-5:00';
     return new Date(date + tz);
-    // const splitDate = date.split('-');
-    // return new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
 };
+
 export const formatDate = date => {
     if (date) {
         return format(createDate(date), 'MMM do, y');
@@ -15,8 +14,6 @@ export const formatDate = date => {
 
 // Returns true if dates are equal, or false otherwise
 export const compareDates = (date1, date2) => {
-    const result = compareAsc(createDate(date1), createDate(date2));
-    let comp;
-    result === 0 ? (comp = true) : (comp = false);
-    return comp;
+    if (compareAsc(createDate(date1), createDate(date2)) === 0) return true;
+    return false;
 };
