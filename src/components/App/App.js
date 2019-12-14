@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import * as playerActions from './redux/actions/playerActions';
-import * as searchActions from './redux/actions/searchActions';
+import * as playerActions from '../../redux/actions/playerActions';
+import * as searchActions from '../../redux/actions/searchActions';
 import './App.scss';
-import PlayerTable from './components/PlayerTable';
-import { playerSelector, filteredPlayersSelector } from './redux/selectors';
-import { formatDate } from './utils/dateUtils';
-import SearchForm from './components/SearchForm';
+import PlayerTable from '../PlayerTable';
+import { playerSelector, filteredPlayersSelector } from '../../redux/selectors';
+import { formatDate } from '../../utils/dateUtils';
+import SearchForm from '../SearchForm';
 
 function App(props) {
     const { dispatch } = props;
