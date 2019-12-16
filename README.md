@@ -4,6 +4,8 @@ A React app that fetches data from an API and manages state with Redux. Uses red
 to manage and memoize derived state. Uses Enzyme and Jest for unit and integration testing. UI is constructed using
 react-bootstrap.
 
+This app is hosted on heroku at: https://mark-mullins-react-redux.herokuapp.com/
+
 To get a test coverage report, run `yarn test:coverage`
 
 Current test coverage report:  
