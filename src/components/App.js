@@ -57,14 +57,16 @@ const App = props => {
     };
 
     return (
-        <div className="App">
+        <div className="App" data-test="app">
             <div className="page-content">
-                <h1 className="title">Football Player Finder</h1>
-                <div className="form-container">
+                <h1 className="title" data-test="title">
+                    Football Player Finder
+                </h1>
+                <div className="form-container" data-test="search-form">
                     <SearchForm handleSearch={handleSearch} />
                 </div>
                 <div className="table-container">
-                    <div className="player-table">
+                    <div className="player-table" data-test="player-table">
                         <PlayerTable
                             players={props.filtered}
                             format={formatDate}
